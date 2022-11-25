@@ -20,6 +20,14 @@ class ComposerStaticInit087f742cd06e5c1dbaf30f7ac1fce691
     );
 
     public static $prefixLengthsPsr4 = array (
+        't' => 
+        array (
+            'tests\\' => 6,
+        ),
+        'W' => 
+        array (
+            'WhiteOctober\\TCPDFBundle\\' => 25,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -46,6 +54,7 @@ class ComposerStaticInit087f742cd06e5c1dbaf30f7ac1fce691
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
             'SensioLabs\\Security\\' => 20,
+            'SWServices\\' => 11,
         ),
         'P' => 
         array (
@@ -58,6 +67,10 @@ class ComposerStaticInit087f742cd06e5c1dbaf30f7ac1fce691
         'M' => 
         array (
             'Monolog\\' => 8,
+        ),
+        'L' => 
+        array (
+            'Liuggio\\ExcelBundle\\' => 20,
         ),
         'I' => 
         array (
@@ -88,6 +101,14 @@ class ComposerStaticInit087f742cd06e5c1dbaf30f7ac1fce691
     );
 
     public static $prefixDirsPsr4 = array (
+        'tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lunasoft/sw-sdk-php/tests',
+        ),
+        'WhiteOctober\\TCPDFBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/whiteoctober/tcpdf-bundle',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -172,6 +193,10 @@ class ComposerStaticInit087f742cd06e5c1dbaf30f7ac1fce691
         array (
             0 => __DIR__ . '/..' . '/sensiolabs/security-checker/SensioLabs/Security',
         ),
+        'SWServices\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lunasoft/sw-sdk-php/SWServices',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -195,6 +220,10 @@ class ComposerStaticInit087f742cd06e5c1dbaf30f7ac1fce691
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Liuggio\\ExcelBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/liuggio/excelbundle',
         ),
         'Incenteev\\ParameterHandler\\' => 
         array (
@@ -250,6 +279,13 @@ class ComposerStaticInit087f742cd06e5c1dbaf30f7ac1fce691
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
+        'P' => 
+        array (
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\ORM\\' => 
@@ -278,14 +314,28 @@ class ComposerStaticInit087f742cd06e5c1dbaf30f7ac1fce691
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'Collator' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/Collator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Datamatrix' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/datamatrix.php',
         'DivisionByZeroError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
         'Error' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/Error.php',
         'IntlDateFormatter' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/IntlDateFormatter.php',
         'Locale' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/Locale.php',
         'NumberFormatter' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/NumberFormatter.php',
+        'PDF417' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/pdf417.php',
         'ParseError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
+        'QRcode' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/qrcode.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
         'SqlFormatter' => __DIR__ . '/..' . '/jdorn/sql-formatter/lib/SqlFormatter.php',
+        'TCPDF' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf.php',
+        'TCPDF2DBarcode' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf_barcodes_2d.php',
+        'TCPDFBarcode' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf_barcodes_1d.php',
+        'TCPDF_COLORS' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_colors.php',
+        'TCPDF_FILTERS' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_filters.php',
+        'TCPDF_FONTS' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_fonts.php',
+        'TCPDF_FONT_DATA' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_font_data.php',
+        'TCPDF_IMAGES' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_images.php',
+        'TCPDF_IMPORT' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf_import.php',
+        'TCPDF_PARSER' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf_parser.php',
+        'TCPDF_STATIC' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_static.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
     );
 

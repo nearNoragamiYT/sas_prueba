@@ -6,6 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'tests\\' => array($vendorDir . '/lunasoft/sw-sdk-php/tests'),
+    'WhiteOctober\\TCPDFBundle\\' => array($vendorDir . '/whiteoctober/tcpdf-bundle'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Tests\\' => array($baseDir . '/tests'),
     'Symfony\\Polyfill\\Util\\' => array($vendorDir . '/symfony/polyfill-util'),
@@ -27,12 +29,14 @@ return array(
     'Sensio\\Bundle\\FrameworkExtraBundle\\' => array($vendorDir . '/sensio/framework-extra-bundle'),
     'Sensio\\Bundle\\DistributionBundle\\' => array($vendorDir . '/sensio/distribution-bundle'),
     'SensioLabs\\Security\\' => array($vendorDir . '/sensiolabs/security-checker/SensioLabs/Security'),
+    'SWServices\\' => array($vendorDir . '/lunasoft/sw-sdk-php/SWServices'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Link\\' => array($vendorDir . '/psr/link/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'Liuggio\\ExcelBundle\\' => array($vendorDir . '/liuggio/excelbundle'),
     'Incenteev\\ParameterHandler\\' => array($vendorDir . '/incenteev/composer-parameter-handler'),
     'Fig\\Link\\' => array($vendorDir . '/fig/link-util/src'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
