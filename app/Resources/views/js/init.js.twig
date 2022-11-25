@@ -1,0 +1,328 @@
+<script type="text/javascript">
+    {% if content['general_text'] is defined %}
+        var general_text = {{content['general_text']|json_encode()|raw}};
+    {% endif %}
+    {% if content['section_text'] is defined %}
+        var section_text = {{content['section_text']|json_encode()|raw}};
+    {% endif %}
+        var lang = "{{ lang }}";
+        var dataTablesLang = "";
+        $(init_principal);
+
+        function init_principal() {
+            $('.modal').modal();
+            $('.modal-trigger').modal({
+                complete: function (e) {
+                    var modal = $('.modal-trigger').attr('href');
+                    var form = $(modal).find('form');
+                    if (isset(form)) {
+                        form[0].reset();
+                        form.validate().resetForm();
+                        Materialize.updateTextFields();
+                    }
+                }
+            });
+            initAlerts();
+            hide_loader_wrapper();
+            hide_loader_top();
+            //isScriptAlreadyIncluded();
+        }
+
+        $(".button-collapse").sideNav();
+        $('.confirmation').on('click', function () {
+            $('#cancel-modal').modal("open");
+        });
+        $('#confirm-cancel').on('click', function () {
+            $('.open').each(function (i, ele) {
+                $(ele).modal("close");
+            });
+        });
+
+        function isset(data) {
+            if (data !== undefined && data !== null && data !== "") {
+                return true;
+            }
+            return false;
+        }
+
+        $('.toUpper').focusout(function () {
+            var element = $(this);
+            element.val(element.val().toUpperCase());
+        });
+        $('.toLower').focusout(function () {
+            var element = $(this);
+            element.val(element.val().toLowerCase());
+        });
+
+        function show_modal(modalBody) {
+            $('#modal .modal-body').html('');
+            $('#modal .modal-body').html(modalBody);
+            $('#modal').modal("open");
+        }
+
+        function show_modal_error(modalBody) {
+            $('#modal-error .modal-body').html('');
+            $('#modal-error .modal-body').html(modalBody);
+            $('#modal-error').modal("open");
+        }
+
+        $(".alert-close").click(close_alert);
+
+        function close_alert() {
+            var alert = $(this).parent(".alert");
+            alert.fadeOut("", function () {
+                alert.remove();
+            });
+        }
+        /**
+         * @description Función para crear los toast
+         * @argument {string} type  tipo de toast que se va a mostrar(success, info, warning, danger) default success
+         * @argument {string} msj  el mensaje que se va a mostrar default undefined
+         * @argument {string} vertical si se ve abajo(bottom) o arriba(top) default top
+         * @argument {string} horizontal si se ve a la izquierda(left) o a la derecha(right) default right
+         * @argument {string} selector sobre donde se va a poner el toast por default sobre el main
+         */
+        function show_toast(type, msj, vertical, horizontal, selector) {
+            var icon = "", cls = "", ver = "", hor = "", sel = "main", title = "";
+            switch (type) {
+                case "fp":
+                    cls = "grey darken-4";
+                    title = general_text.sas_exito;
+                    break;
+                case "success":
+                    icon = "beenhere";
+                    cls = "green";
+                    title = general_text.sas_exito;
+                    break;
+                case "info":
+                    icon = "info";
+                    cls = "blue";
+                    title = general_text.sas_informacion;
+                    break;
+                case "warning":
+                    icon = "warning";
+                    cls = "orange";
+                    title = general_text.sas_atencion;
+                    break;
+                case "danger":
+                    icon = "error";
+                    cls = "red";
+                    title = general_text.sas_error;
+                    break;
+                default:
+                    icon = "beenhere";
+                    cls = "green";
+                    title = general_text.sas_exito;
+                    break;
+            }
+            switch (vertical) {
+                case "top":
+                    ver = "top";
+                    break;
+                case "bottom":
+                    ver = "bottom";
+                    break;
+                default:
+                    ver = "top";
+                    break;
+            }
+            switch (horizontal) {
+                case "right":
+                    hor = "right";
+                    break;
+                case "left":
+                    hor = "left";
+                    break;
+                default:
+                    hor = "right";
+                    break;
+            }
+            if (selector !== "" && selector !== null && selector !== undefined) {
+                sel = selector;
+            }
+             if (type == "fp") {
+                var div = "", i = "", content = "", p = "", ele = "", la = "";
+                content = document.createElement('div');
+                content.className = "toast-alert card row z-depth-2 white-text " + cls;
+                content.style.position = "fixed";
+                content.style.zIndex = 1100;
+                content.style.width = "15%";
+                content.style.display = "none";
+                content.style[ver] = "30px";
+                content.style[hor] = "30px";
+                content.style.padding = "10px";
+                i = document.createElement('i');
+                i.className = "Tiny material-icons close-toast-alert";
+                i.innerHTML = "close";
+                i.style.position = "absolute";
+                i.style.top = "5px";
+                i.style.right = "10px";
+                i.style.cursor = "pointer";
+                content.appendChild(i);
+                div = document.createElement('div');
+                div.className = "col s10";
+                i = document.createElement('i');
+                i.className = "material-icons";
+                i.innerHTML = icon;
+                div.appendChild(i);
+                la = document.createElement('label');
+                la.textContent = title;
+                la.className = "white-text";
+                la.style.textTransform = "uppercase";
+                la.style.fontSize = "10px";
+                la.style.marginLeft = "10px";
+                div.appendChild(la);
+                content.appendChild(div);
+                div = document.createElement('div');
+                div.className = "col s12 divider white";
+                content.appendChild(div);
+                div = document.createElement('div');
+                div.className = "col s10";
+                p = document.createElement('p');
+                p.innerHTML = msj;
+                div.appendChild(p);
+                content.appendChild(div);
+                ele = document.querySelector(sel);
+                ele.appendChild(content);
+                $('.toast-alert').fadeIn(1000);
+                setTimeout(function () {
+                    $('.toast-alert').fadeOut({
+                        duration: 1000,
+                        complete: function (element) {
+                            $(".toast-alert").remove();
+                        }
+                    });
+                }, 7000);
+
+            } else {
+                var div = "", i = "", content = "", p = "", ele = "";
+                content = document.createElement('div');
+                content.className = "toast-alert card row z-depth-2 white-text " + cls;
+                content.style.position = "fixed";
+                content.style.zIndex = 10000;
+                content.style.width = "15%";
+                content.style.display = "none";
+                content.style[ver] = "30px";
+                content.style[hor] = "30px";
+                content.style.padding = "15px";
+                i = document.createElement('i');
+                i.className = "Tiny material-icons close-toast-alert";
+                i.innerHTML = "close";
+                i.style.position = "absolute";
+                i.style.top = "5px";
+                i.style.right = "10px";
+                i.style.cursor = "pointer";
+                content.appendChild(i);
+                div = document.createElement('div');
+                div.className = "col s2";
+                i = document.createElement('i');
+                i.className = "small material-icons";
+                i.innerHTML = icon;
+                div.appendChild(i);
+                content.appendChild(div);
+                div = document.createElement('div');
+                div.className = "col s10";
+                p = document.createElement('p');
+                p.innerHTML = msj;
+                div.appendChild(p);
+                content.appendChild(div);
+                ele = document.querySelector(sel);
+                ele.appendChild(content);
+                $('.toast-alert').fadeIn(1000);
+                setTimeout(function () {
+                    $('.toast-alert').fadeOut({
+                        duration: 1000,
+                        complete: function (element) {
+                            $(".toast-alert").remove();
+                        }
+                    });
+                }, 7000);
+            }
+
+        }
+
+        $(document).on('click', '.close-toast-alert', function () {
+            $(this).parent().fadeOut({
+                duration: 1000,
+                complete: function () {
+                    $(".toast-alert").remove();
+                }
+            });
+        });
+
+        function show_alert(type, msg, timeout) {
+            var alert = $('<div/>', {
+                "class": 'alert alert-' + type,
+                "style": 'display: none;',
+                "text": msg
+            });
+            delay = (timeout === undefined) ? 5000 : timeout;
+            $('<i/>', {
+                "class": 'material-icons alert-close',
+                "text": 'clear'
+            }).appendTo(alert).click(close_alert);
+            if ($("main").length) {
+                $("main").prepend(alert);
+            } else {
+                $("body").prepend(alert);
+            }
+            alert.fadeIn("fast");
+            setTimeout(function () {
+                alert.fadeOut("fast");
+            }, delay);
+        }
+
+        $(".show-loader-top").click(show_loader_top);
+
+        function show_loader_top() {
+            $('.loader-top').fadeIn();
+            $('.loader-top').fadeOut();
+        }
+
+        function hide_loader_top() {
+            $('.loader-top').fadeOut();
+        }
+
+        $(".show-loader-wrapper").click(show_loader_wrapper);
+
+        function show_loader_wrapper() {
+            $('#loader-wrapper').fadeIn();
+        }
+
+        function hide_loader_wrapper() {
+            $('#loader-wrapper').fadeOut();
+        }
+        function initAlerts() {
+    {% for flash_message in app.session.flashBag.get('warning') %}
+            show_alert("warning", "{{ flash_message|raw|replace({'"': '\"'}) }}");
+    {% endfor %}
+    {% for flash_message in app.session.flashBag.get('danger') %}
+            show_alert("danger", "{{ flash_message|raw|replace({'"': '\"'}) }}");
+    {% endfor %}
+    {% for flash_message in app.session.flashBag.get('success') %}
+            show_alert("success", "{{ flash_message|raw|replace({'"': '\"'}) }}");
+    {% endfor %}
+    {% for flash_message in app.session.flashBag.get('info') %}
+            show_alert("info", "{{ flash_message|raw|replace({'"': '\"'}) }}");
+    {% endfor %}
+        }
+
+        $("nav .breadcrumb").each(function () {
+            var href = $(this).attr("href");
+            var txt = $(this).text().trim();
+            if (isset(href)) {
+                var a = $("#slide-out li a[href='" + href + "']");
+                a.addClass("active");
+            } else {
+                $("#slide-out li > a:not([href], .active)").each(function () {
+                    var a = $(this);
+                    var a_txt = a.clone().children().remove().end().text().trim();
+
+                    if (a_txt === txt) {
+                        a.addClass("active");
+                    }
+                });
+            }
+        });
+        $("#slide-out li > a.active[href='" + $("nav .breadcrumb:last-child").attr("href") + "']").addClass("selected");
+</script>
