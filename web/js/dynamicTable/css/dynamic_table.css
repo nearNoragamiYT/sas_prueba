@@ -1,0 +1,251 @@
+.wrapper-dynamic-table{
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 5px 2px 17px -8px;
+}
+.loader-table-data{
+    display: none;
+    float: left;
+    width: 100%;
+}
+.loader-table-data label{
+    display: block;
+    width: 80%;
+    margin: 0% auto;
+    margin-top: 10%;
+    text-align: center;
+}
+.dinamic-table tfoot tr th input,
+.dinamic-table tfoot tr th select{
+    width: 100% !important;
+}
+.dinamic-table .hidden-column{
+    display:none !important;
+}
+#cover-advace-search{
+    display: none;
+    margin: 20px 0px;
+}
+.img-search-table{
+    width: 20px;
+    height: 20px;
+    margin: 3px 5px;
+    cursor: pointer;
+    float: right;
+}
+.dinamic-table thead tr th[aria-label^="ID"],
+.dinamic-table thead tr th[aria-label^="id"],
+.dinamic-table thead tr th[aria-label^="#"]{
+    width: 8%;
+}
+.dinamic-table .img-into-table{
+    display: block;
+    width: 30px;
+    height: 30px;
+    opacity: 0.2;
+    margin: 0% auto;
+    filter: alpha(opacity=20);
+    cursor: pointer;
+}
+.dinamic-table .img-into-table:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.dinamic-table thead{
+    display: table-header-group;
+}
+/*.dinamic-table tbody{
+    display: table-footer-group;
+}
+.dinamic-table tfoot{
+    display: table-header-group;
+}*/
+.dinamic-table tbody tr:hover .img-into-table{
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.wrapper-dynamic-table .lbl-link.clear-filters{
+    font-weight: normal;
+    font-size: 15px;
+    color: #5285b8;
+    padding: 4px 18px;
+    line-height: 27px;
+    display: inline-block;
+    cursor: pointer;
+    float: right;
+}
+.wrapper-dynamic-table .clear-filters{
+    /*padding: 0px 0px 0px 10px;*/
+}
+.popover-filter{
+    max-width : 900px;
+    z-index: 1030;
+    display: none;
+}
+.wrapper-dynamic-table #info-time{
+    margin-left: 2%;
+    float: left;
+    width: 45%;
+    text-align: right;
+    font-size: 15px;
+    display: inline-block;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+.wrapper-dynamic-table .btn-export{
+    cursor: pointer;
+    float: left;
+    color: black !important;
+    width: auto;
+    margin-left: 25%;
+    font-size: 12px;
+    text-align: center;
+}
+.wrapper-dynamic-table .btn-export label{
+    cursor: pointer;
+    margin-bottom: 0px;
+    margin-right: 5px;
+}
+.wrapper-dynamic-table .btn-export:hover{
+    opacity: 0.6;
+    filter: aplha(opacity=60);
+}
+.wrapper-dynamic-table .btn-export img{
+    width: 30px;    
+    height: auto;
+}
+.wrapper-dynamic-table .dataTables_processing{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: -10px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: white;
+    color: #333;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    z-index: 100;
+}
+.wrapper-dynamic-table .dataTables_processing label{
+    top: 0px;
+    margin-top: 20%;
+}
+.wrapper-dynamic-table .columnTitle{
+    font-weight: 200;
+    color: #B5B5B5;
+}
+/* ------------------- Custom Filters ------------------- */
+.cutom-filters-form{
+    overflow: hidden;
+}
+.cutom-filters-form .close-custom-filters-from{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #2a6496;
+    cursor: pointer;
+}
+.cutom-filters-form .custom-filters{
+    float: left;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 5px 2px 17px -8px;
+    padding: 10px;
+}
+.cutom-filters-form .custom-filters fieldset{
+}
+.cutom-filters-form .custom-filters fieldset legend{
+    width: auto;
+    padding: 0px 15px;
+    margin: 0px;
+}
+.cutom-filters-form .custom-filters .checkbox{
+    padding: 0px;
+}
+.cutom-filters-form .custom-filters .checkbox label{
+    float: left;
+    width: 100%;
+}
+.cutom-filters-form .custom-filters .checkbox label .dt-column-selectable{
+    zoom:1.4;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 5px;
+}
+.cutom-filters-form .custom-filters .dt-column-filter{
+    //Only for ADM showed all columns as default
+    //display: none;
+    height: 34px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.cutom-filters-form .custom-filters .dt-column-filter.inpt{
+    padding: 6px 12px;
+    font-size: 14px;
+}
+.cutom-filters-form .custom-filters .dt-column-filter.operator{
+    font-size: 18px;
+    padding: 6px 10px;
+}
+.cutom-filters-form .cover-bordered-btn .generate-table{
+    float: right;
+    margin-right: 5%;
+}
+.cutom-filters-form .cover-bordered-btn .clear-filters{
+    float: right;
+    margin-right: 3%;
+}
+.cutom-filters-form .custom-filters-summary{
+    padding: 0px;
+}
+.cutom-filters-form .custom-filters-summary .small-filters-title{
+    padding: 5px 0px;
+    text-align: center;
+    font-size: 1.1em;
+    letter-spacing: 0.3px;
+}
+.cutom-filters-form .custom-filters-summary .show-custom-filters{
+    float: right;
+}
+.cutom-filters-form .custom-filters-summary .summary-detail{
+    overflow: hidden;
+    padding: 0px;
+}
+.cutom-filters-form .custom-filters-summary .summary-detail .small-filter{
+    border-radius: 13px;
+    float: left;
+    padding: 5px;
+    background-color: #6490b1;
+    color: #fff;    
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+/* ----------------- End Custom Filters ----------------- */
+/* -------------------    Helpers     -------------------- */
+.cover-bordered-btn{
+    border-top: 1px solid #ddd;
+    padding: 8px 0px;
+    margin-top: 10px;
+}
+select {
+    display: block;
+    margin-bottom: 15px;
+}
+/* -------------------  End Helpers   -------------------- */
