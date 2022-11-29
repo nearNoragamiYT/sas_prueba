@@ -1,12 +1,14 @@
 <?php return array(
     'root' => array(
         'name' => 'symfony/framework-standard-edition',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '4155a5187f3b6e624071a7ea75ba613c7ee2a53e',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'f7ee44690cbfc975cb963a7fbacca67f264140d3',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
-        'aliases' => array(),
+        'aliases' => array(
+            0 => '3.4.x-dev',
+        ),
         'dev' => true,
     ),
     'versions' => array(
@@ -430,12 +432,14 @@
             ),
         ),
         'symfony/framework-standard-edition' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '4155a5187f3b6e624071a7ea75ba613c7ee2a53e',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'f7ee44690cbfc975cb963a7fbacca67f264140d3',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
+            'aliases' => array(
+                0 => '3.4.x-dev',
+            ),
             'dev_requirement' => false,
         ),
         'symfony/http-foundation' => array(
