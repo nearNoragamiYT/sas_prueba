@@ -3,7 +3,7 @@
         'name' => 'symfony/framework-standard-edition',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'f7ee44690cbfc975cb963a7fbacca67f264140d3',
+        'reference' => '9fb2d744ffe75c33b8e652db946dd4d331544bb6',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(
@@ -434,7 +434,7 @@
         'symfony/framework-standard-edition' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'f7ee44690cbfc975cb963a7fbacca67f264140d3',
+            'reference' => '9fb2d744ffe75c33b8e652db946dd4d331544bb6',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(
