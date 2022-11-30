@@ -1,0 +1,5 @@
+Actualiza los vendor sin afectar los parameter
+composer update --no-scripts
+
+errores en json
+composer dump-autoload
