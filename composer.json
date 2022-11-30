@@ -27,6 +27,9 @@
         "twig/twig": "^1.0||^2.0",
         "whiteoctober/tcpdf-bundle": "^1.0.2",
         "liuggio/excelbundle": "dev-master",
+        "friendsofsymfony/rest-bundle": "^2.2",
+        "html2text/html2text": "^4.1",
+        "doctrine/doctrine-cache-bundle": "^1.2",
         "lunasoft/sw-sdk-php": "dev-master"
     },
     "require-dev": {
